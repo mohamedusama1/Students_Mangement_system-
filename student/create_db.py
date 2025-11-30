@@ -7,4 +7,8 @@ def create_db():
                 'name TEXT ,username TEXT,'
                 'password TEXT) ')
     conn.commit()
+    cur.execute('CREATE TABLE IF NOT EXISTS Admin(admin_ID INTEGER PRIMARY KEY ,'
+                'admin_name TEXT ,admin_username TEXT,'
+                'admin_password TEXT) ')
+    conn.commit()
 create_db()
