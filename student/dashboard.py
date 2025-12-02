@@ -3,6 +3,8 @@ from tkinter import *
 from PIL import Image,ImageOps
 from time import strftime
 import adminpage
+import studentspage
+
 
 class DashboardClass():
     def __init__(self,root):
@@ -227,7 +229,7 @@ class DashboardClass():
                 font=('Arial', 30, 'bold'),
                 border_color='#CBB3FF', border_width=5,
                 image=stu_img, compound='top',
-                border_spacing=20, hover_color='#F0E8FF', corner_radius=30
+                border_spacing=20, hover_color='#F0E8FF', corner_radius=30,command=open_students_page
             )
             student_btn.place(x=50, y=80)
 
@@ -353,6 +355,11 @@ class DashboardClass():
         def open_admin_page():
             win = Toplevel()
             adminpage.AdminClass(win)
+            root.withdraw()
+            win.deiconify()
+        def open_students_page():
+            win = Toplevel()
+            studentspage.StudentsClass(win)
             root.withdraw()
             win.deiconify()
 
